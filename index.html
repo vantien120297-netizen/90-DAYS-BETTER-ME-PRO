@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BETTER ME">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>90 DAYS – BETTER ME PRO</title>
+<style>
+:root{--bg:#090a0c;--panel:#141619;--panel2:#1b1e22;--gold:#e7bd58;--gold2:#f5d98c;--text:#f5f3ed;--muted:#a6a39a;--line:#2c2e31;--green:#65c18c;--red:#e17b70}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+header{padding:calc(18px + env(safe-area-inset-top)) 18px 16px;background:linear-gradient(145deg,#171512,#090a0c 70%);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.brand{display:flex;justify-content:space-between;align-items:center}.brand small{color:var(--gold);letter-spacing:2px;font-weight:800}.brand h1{font-size:21px;margin:5px 0 0;letter-spacing:.5px}.daypill{border:1px solid #725d2e;color:var(--gold2);padding:8px 11px;border-radius:20px;font-size:12px}
+main{padding:16px;max-width:760px;margin:auto}.view{display:none}.view.active{display:block}.hero{background:linear-gradient(135deg,#252016,#151515);border:1px solid #594823;border-radius:18px;padding:18px;margin-bottom:15px}.eyebrow{font-size:11px;color:var(--gold);letter-spacing:1.7px;font-weight:800}.hero h2{font-size:24px;margin:8px 0}.hero p{color:var(--muted);font-size:13px;line-height:1.5;margin:6px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:14px}.stat b{display:block;color:var(--gold2);font-size:23px;margin:5px 0}.stat span,.muted{color:var(--muted);font-size:12px}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}.sectionhead h3{margin:0;font-size:16px}.sectionhead small{color:var(--muted)}
+button,.btn{border:0;background:var(--gold);color:#17130a;font-weight:800;padding:11px 14px;border-radius:11px;font-size:13px;cursor:pointer}.btn.secondary,button.secondary{background:var(--panel2);color:var(--gold2);border:1px solid #514326}.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+button:active{transform:scale(.98)}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.progress{height:8px;background:#2a2b2d;border-radius:20px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#a77c2a,var(--gold2));width:0}
+label{display:block;font-size:12px;color:var(--muted);margin:10px 0 5px}input,textarea,select{width:100%;background:#0d0f11;border:1px solid var(--line);color:var(--text);padding:12px;border-radius:10px;font:inherit;font-size:14px}textarea{min-height:95px;resize:vertical}
+.check{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.4}.check input{width:18px;height:18px;accent-color:var(--gold);flex:none;margin:0}.check.done span{text-decoration:line-through;color:#777}
+.pillar{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.tag{font-size:10px;color:var(--gold);border:1px solid #574725;border-radius:20px;padding:4px 7px;white-space:nowrap}
+.tabs{position:fixed;bottom:0;left:0;right:0;z-index:10;background:#101214f2;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(15px)}.tab{background:none;color:var(--muted);padding:7px 2px;font-size:10px;font-weight:600;border-radius:9px}.tab span{display:block;font-size:18px;margin-bottom:3px}.tab.active{color:var(--gold);background:#282216}
+.dayrow{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid var(--line)}.daynum{width:34px;height:34px;border-radius:50%;background:#292319;color:var(--gold);display:grid;place-items:center;font-weight:800;flex:none}.dayrow small{color:var(--muted)}.dayrow .grow{flex:1;min-width:0}.dayrow strong{font-size:13px}.dayrow p{font-size:11px;color:var(--muted);margin:3px 0 0}
+canvas{width:100%;height:190px;display:block}.empty{color:var(--muted);font-size:13px;padding:18px;text-align:center}.danger{color:var(--red)}.footer{text-align:center;color:#777;font-size:10px;margin:24px 0}
+@media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div><small>PERSONAL GROWTH SYSTEM</small><h1>90 DAYS · BETTER ME <span style="color:var(--gold)">PRO</span></h1></div><div class="daypill" id="topDay">DAY 01 / 90</div></div></header>
+<main>
+<section id="home" class="view active">
+ <div class="hero"><div class="eyebrow">YOUR NEXT 90 DAYS START NOW</div><h2 id="greeting">Trở thành phiên bản tốt hơn.</h2><p>Không cần hoàn hảo. Chỉ cần tiến bộ có kỷ luật mỗi ngày.</p><div class="row"><button onclick="go('plan')">Xem nhiệm vụ hôm nay</button><button class="secondary" onclick="go('journal')">Viết nhật ký</button></div></div>
+ <div class="grid">
+  <div class="stat"><span>Ngày chương trình</span><b id="statDay">01/90</b><span id="phaseLabel">Giai đoạn xây nền</span></div>
+  <div class="stat"><span>Tiến độ hoàn thành</span><b id="statProgress">0%</b><div class="progress"><i id="mainProgress"></i></div></div>
+  <div class="stat"><span>Buổi chạy đã ghi</span><b id="statRuns">0</b><span>Buổi chạy / đi bộ</span></div>
+  <div class="stat"><span>Chuỗi ngày hoạt động</span><b id="statStreak">0</b><span>Ngày liên tiếp có ghi nhận</span></div>
+ </div>
+ <div class="sectionhead"><h3>Nhiệm vụ trọng tâm hôm nay</h3><small id="todayDate"></small></div>
+ <div class="card" id="todayCard"></div>
+ <div class="sectionhead"><h3>5 trụ cột phát triển</h3><small>Đánh giá định kỳ</small></div>
+ <div class="card">
+  <div class="pillar"><span>🏃 Thể chất</span><span class="tag">Sức khỏe · Phong độ</span></div>
+  <div class="pillar"><span>🧠 Trí tuệ</span><span class="tag">Kiến thức · Tư duy</span></div>
+  <div class="pillar"><span>💬 Giao tiếp</span><span class="tag">Tự tin · Lắng nghe</span></div>
+  <div class="pillar"><span>📈 Sự nghiệp & tài chính</span><span class="tag">Năng lực · Độc lập</span></div>
+  <div class="pillar"><span>🛡️ Bản lĩnh & tình cảm</span><span class="tag">Tự chủ · Ranh giới</span></div>
+ </div>
+</section>
+<section id="plan" class="view">
+ <div class="sectionhead"><h3>Lộ trình 90 ngày</h3><small>13 tuần · 3 giai đoạn</small></div>
+ <div class="row"><select id="weekSelect" onchange="renderWeek()"></select><button class="secondary" onclick="setToday()">Về hôm nay</button></div>
+ <div class="card" style="margin-top:12px"><div class="eyebrow" id="weekPhase">GIAI ĐOẠN 1</div><h3 id="weekTitle"></h3><p class="muted" id="weekGoal"></p><div class="progress"><i id="weekProgress"></i></div><small class="muted" id="weekProgressText"></small></div>
+ <div id="dayList" class="card" style="margin-top:12px;padding:4px 12px"></div>
+ <div class="sectionhead"><h3>Chi tiết ngày được chọn</h3><small id="selectedDayLabel"></small></div>
+ <div class="card" id="dayDetail"></div>
+</section>
+<section id="run" class="view">
+ <div class="sectionhead"><h3>Nhật ký chạy bộ</h3><small>Chạy chậm · tăng dần</small></div>
+ <div class="card">
+  <div class="row"><div><label>Ngày</label><input type="date" id="runDate"></div><div><label>Loại vận động</label><select id="runType"><option>Chạy ngoài trời</option><option>Chạy tại nhà / máy chạy</option><option>Đi bộ nhanh</option><option>Phục hồi / giãn cơ</option></select></div></div>
+  <div class="row"><div><label>Quãng đường (km)</label><input type="number" id="runKm" step=".1" min="0" placeholder="Ví dụ: 3.0"></div><div><label>Thời gian (phút)</label><input type="number" id="runMin" min="0" placeholder="Ví dụ: 25"></div></div>
+  <label>Cảm nhận / ghi chú</label><input id="runNote" placeholder="Ví dụ: chạy nhẹ, còn sức">
+  <button style="width:100%;margin-top:12px" onclick="addRun()">Lưu buổi tập</button>
+ </div>
+ <div class="grid" style="margin-top:12px"><div class="stat"><span>Tổng quãng đường</span><b id="totalKm">0 km</b></div><div class="stat"><span>Tổng thời gian</span><b id="totalMin">0 phút</b></div></div>
+ <div class="sectionhead"><h3>Lịch sử vận động</h3><small id="runCount">0 buổi</small></div><div class="card" id="runList"></div>
+</section>
+<section id="kpi" class="view">
+ <div class="sectionhead"><h3>Bảng điều khiển KPI</h3><small>Đích đến ngày 90</small></div>
+ <div class="card"><div class="eyebrow">TỔNG TIẾN ĐỘ</div><h2 id="kpiPercent" style="color:var(--gold);margin:8px 0">0%</h2><div class="progress"><i id="kpiBar"></i></div><p class="muted">Tỷ lệ ngày có ít nhất một nhiệm vụ hoàn thành.</p></div>
+ <div class="sectionhead"><h3>Chỉ tiêu 90 ngày</h3></div><div class="card" id="kpiList"></div>
+ <div class="sectionhead"><h3>Biểu đồ tiến bộ theo tuần</h3></div><div class="card"><canvas id="chart" width="640" height="250"></canvas><small class="muted">Số nhiệm vụ hoàn thành mỗi tuần (tối đa 70).</small></div>
+ <div class="sectionhead"><h3>Đánh giá 5 lĩnh vực</h3><small>Chấm điểm 1–10</small></div><div class="card" id="ratingList"></div>
+ <button class="secondary" style="width:100%;margin-top:12px" onclick="saveRatings()">Lưu đánh giá</button>
+</section>
+<section id="journal" class="view">
+ <div class="sectionhead"><h3>Nhật ký phát triển</h3><small>Nhìn lại chính mình</small></div>
+ <div class="card">
+  <label>Ngày ghi nhật ký</label><input type="date" id="journalDate">
+  <label>Hôm nay tôi đã làm tốt điều gì?</label><textarea id="journalGood" placeholder="Ghi ít nhất một điều..."></textarea>
+  <label>Điều gì tôi cần cải thiện?</label><textarea id="journalImprove" placeholder="Thành thật với bản thân..."></textarea>
+  <label>Hành động dũng cảm / giao tiếp hôm nay</label><textarea id="journalBrave" placeholder="Tôi đã chủ động nói chuyện, nêu ý kiến..."></textarea>
+  <label>Biết ơn điều gì?</label><textarea id="journalThanks" placeholder="Ba điều nhỏ cũng được..."></textarea>
+  <label>Điểm tinh thần (1–10)</label><input type="number" id="journalMood" min="1" max="10" value="7">
+  <button style="width:100%;margin-top:12px" onclick="saveJournal()">Lưu nhật ký</button>
+ </div>
+ <div class="sectionhead"><h3>Nhật ký đã lưu</h3><small id="journalCount">0 mục</small></div><div id="journalList" class="card"></div>
+</section>
+<div class="footer">BETTER ME PRO · Dữ liệu được lưu trên thiết bị của bạn</div>
+</main>
+<nav class="tabs">
+ <button class="tab active" data-view="home" onclick="go('home')"><span>⌂</span>Tổng quan</button>
+ <button class="tab" data-view="plan" onclick="go('plan')"><span>▦</span>90 ngày</button>
+ <button class="tab" data-view="run" onclick="go('run')"><span>◉</span>Chạy bộ</button>
+ <button class="tab" data-view="kpi" onclick="go('kpi')"><span>▥</span>KPI</button>
+ <button class="tab" data-view="journal" onclick="go('journal')"><span>✎</span>Nhật ký</button>
+</nav>
+<script>
+const titles=[
+"Thiết lập mục tiêu và đánh giá điểm xuất phát","Đi bộ nhanh 20 phút, chào hỏi 3 người","Chạy/đi bộ 20 phút, nói trước gương 5 phút","Đi bộ nhẹ, đọc 10 trang sách","Chạy nhẹ 20 phút, bắt chuyện đồng nghiệp","Tập thân người, ghi 3 điều biết ơn","Nghỉ phục hồi và tổng kết tuần",
+"Chạy/đi bộ 22 phút, rà soát trang phục","Tập thân người, luyện giao tiếp bằng mắt","Chạy 22 phút, hỏi thăm đồng nghiệp","Đi bộ 20 phút, đọc 10 trang","Chạy 25 phút, nói chuyện với người mới","Tập thân người, quay video giới thiệu 1 phút","Nghỉ, đánh giá giấc ngủ và tinh thần",
+"Chạy/đi bộ 25 phút, chào hỏi 5 người","Tập thân người, kể một câu chuyện ngắn","Chạy 25 phút, đặt 3 câu hỏi mở","Đi bộ phục hồi, luyện nói rõ ràng","Chạy 25 phút, chủ động gọi điện công việc","Tập thân người, tham gia trò chuyện nhóm","Nghỉ, viết điều khiến mình thiếu tự tin",
+"Chạy 25 phút, nêu ý kiến trong trao đổi","Tập thân người, giới thiệu bản thân 2 phút","Chạy 25–30 phút, đề xuất giải pháp","Đi bộ nhẹ, nói trước gương 10 phút","Chạy 30 phút, giao tiếp với người chưa thân","Tập thân người, quay video chủ đề am hiểu","Nghỉ và đánh giá tháng đầu tiên",
+"Kiểm tra thể lực, giao tiếp, tài chính và kỷ luật","Viết báo cáo tháng 1 và chọn 3 điểm cần sửa",
+"Chạy/đi bộ 30 phút, ghi cảm nhận","Tập thân người, học chuyên môn 20 phút","Chạy 30 phút, trao đổi vấn đề công việc","Đi bộ phục hồi, đọc 15 trang","Chạy 30 phút, luyện kể chuyện tự nhiên","Tập thân người, lập kế hoạch tài chính","Nghỉ và đánh giá tuần",
+"Chạy 30 phút, bắt chuyện người mới","Tập thân người, lắng nghe không ngắt lời","Chạy 30–35 phút, đặt câu hỏi sâu","Đi bộ, học cách tiếp nhận góp ý","Chạy nhẹ 30 phút, gọi điện người thân","Tập thân người, nói trước nhóm 3 phút","Nghỉ và đánh giá giao tiếp",
+"Chạy 35 phút, đọc 15 trang","Tập thân người, học kiến thức nghề","Chạy 30–35 phút, chia sẻ điều đã học","Đi bộ phục hồi, viết nhật ký 15 phút","Chạy 35 phút, tìm hiểu kinh tế/xã hội","Tập thân người, video chia sẻ 3 phút","Nghỉ và đánh giá học tập",
+"Chạy 35 phút, luyện bình tĩnh khi bị phê bình","Tập thân người, từ chối lịch không phù hợp lịch sự","Chạy 35 phút, trình bày quan điểm có lý lẽ","Đi bộ, dành thời gian cho sở thích","Chạy 35 phút, không phản ứng nóng","Tập thân người, giải quyết việc tồn đọng","Nghỉ và đánh giá cảm xúc",
+"Đánh giá thể lực, kiến thức, giao tiếp và tài chính","Viết báo cáo ngày 60 và điều chỉnh mục tiêu",
+"Chạy 35–40 phút, chú ý tư thế","Tập thân người, chọn trang phục gọn gàng","Chạy 35 phút, dẫn dắt cuộc trò chuyện","Đi bộ phục hồi, đọc 15 trang","Chạy 40 phút, nói trước nhóm 3–5 phút","Tập thân người, xem lại video nói","Nghỉ và đánh giá phong thái",
+"Chạy 40 phút, chọn kỹ năng nghề nghiệp","Tập thân người, học chuyên môn 30 phút","Chạy 40 phút, đề xuất cải tiến công việc","Đi bộ, rà soát thu nhập và chi tiêu","Chạy 40 phút, chia sẻ kiến thức","Tập thân người, lập kế hoạch nghề nghiệp 6 tháng","Nghỉ và tổng kết tuần",
+"Chạy 40 phút, chăm sóc bản thân","Tập thân người, lắng nghe khi bất đồng","Chạy 40 phút, chủ động thể hiện quan tâm","Đi bộ, viết ranh giới cá nhân","Chạy 40 phút, phản hồi bình tĩnh","Tập thân người, dành thời gian cho gia đình","Nghỉ và đánh giá các mối quan hệ",
+"Chạy 4 km nếu đủ thể lực","Tập thân người, nói trước một nhóm","Chạy 40–45 phút, giải quyết vấn đề khó","Đi bộ phục hồi, đọc 20 phút","Chạy 4–5 km theo sức, kể chuyện trước nhóm","Tập thân người, lập ngân sách","Nghỉ và đánh giá toàn bộ quá trình",
+"Chạy thử 5 km nếu sẵn sàng, không ép thành tích","Tổng kết 90 ngày, so sánh và lập kế hoạch mới"
+];
+const weeks=[
+["Xây dựng kỷ luật","Tạo thói quen nhỏ, ổn định giờ giấc và bắt đầu vận động."],
+["Chăm sóc ngoại hình","Xây dựng phong thái gọn gàng, khỏe khoắn."],
+["Tăng khả năng giao tiếp","Chủ động bắt chuyện, lắng nghe và đặt câu hỏi."],
+["Xây dựng sự tự tin","Dám thể hiện quan điểm và đề xuất giải pháp."],
+["Nâng cao thể lực","Tăng sức bền và duy trì phong độ."],
+["Làm chủ cuộc trò chuyện","Biết nói, biết nghe và biết phản hồi."],
+["Phát triển trí tuệ","Tăng kiến thức và chủ đề để trò chuyện."],
+["Bản lĩnh và ranh giới","Tự chủ cảm xúc, ứng xử bình tĩnh."],
+["Phong thái tự tin","Thể hiện sự tự tin qua lời nói và hành động."],
+["Tăng giá trị sự nghiệp","Nâng cao chuyên môn và chủ động trong công việc."],
+["Tự chủ cảm xúc và tình cảm","Quan tâm người khác nhưng không đánh mất mình."],
+["Tự tin trước thử thách","Bước ra khỏi vùng an toàn một cách có kiểm soát."],
+["Tổng kết và duy trì","Biến thói quen tốt thành lối sống."]
+];
+const weekStarts=[1,8,15,22,29,36,43,50,57,64,71,78,85];
+const defaultState={start:null,done:{},runs:[],journals:{},ratings:{},kpis:{talks:0,videos:0,books:0,publicSpeaking:0,career:0,finance:0}};
+let state=load();
+function load(){try{return {...defaultState,...JSON.parse(localStorage.getItem("betterMe90")||"{}")}}catch(e){return {...defaultState}}}
+function save(){localStorage.setItem("betterMe90",JSON.stringify(state));renderAll()}
+function iso(d=new Date()){return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10)}
+function dayNum(){if(!state.start)return 1;let a=new Date(state.start+"T00:00:00"),b=new Date();return Math.max(1,Math.min(90,Math.floor((b-a)/86400000)+1))}
+function weekOf(d){return Math.min(13,Math.floor((d-1)/7)+1)}
+function phase(d){return d<=30?"Giai đoạn 1 · Xây nền":d<=60?"Giai đoạn 2 · Bứt phá":"Giai đoạn 3 · Hoàn thiện"}
+function init(){if(!state.start)state.start=iso();document.getElementById("runDate").value=iso();document.getElementById("journalDate").value=iso();let s=document.getElementById("weekSelect");s.innerHTML=weeks.map((w,i)=>`<option value="${i+1}">Tuần ${i+1} · ${w[0]}</option>`).join("");s.value=weekOf(dayNum());renderAll();if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});}
+function go(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.view===id));if(id==="kpi")drawChart();window.scrollTo(0,0)}
+function task(d){return titles[d-1]||"Duy trì thói quen và tổng kết ngày."}
+function completed(d){return (state.done[d]||[]).length}
+function renderAll(){let d=dayNum(),pct=Math.round(Object.keys(state.done).filter(k=>state.done[k]?.length).length/90*100);document.getElementById("topDay").textContent=`DAY ${String(d).padStart(2,"0")} / 90`;document.getElementById("statDay").textContent=`${d}/90`;document.getElementById("phaseLabel").textContent=phase(d);document.getElementById("statProgress").textContent=pct+"%";document.getElementById("mainProgress").style.width=pct+"%";document.getElementById("statRuns").textContent=state.runs.length;document.getElementById("statStreak").textContent=streak();document.getElementById("todayDate").textContent=new Date().toLocaleDateString("vi-VN");document.getElementById("todayCard").innerHTML=`<div class="eyebrow">DAY ${d} · ${phase(d).toUpperCase()}</div><h3>${task(d)}</h3><p class="muted">Hoàn thành nhiệm vụ trọng tâm, vận động phù hợp và thực hiện một hành động giao tiếp chủ động.</p><button onclick="selectDay(${d});go('plan')">Mở nhiệm vụ</button>`;renderWeek();renderRuns();renderKpi();renderJournals();}
+function streak(){let n=0;for(let d=dayNum();d>=1;d--){if(completed(d)>0)n++;else if(d!==dayNum())break}return n}
+function setToday(){document.getElementById("weekSelect").value=weekOf(dayNum());renderWeek();selectDay(dayNum())}
+let selected=1;
+function renderWeek(){let w=+document.getElementById("weekSelect").value||1,start=weekStarts[w-1],end=Math.min(90,start+6);document.getElementById("weekPhase").textContent=phase(start).toUpperCase();document.getElementById("weekTitle").textContent=`Tuần ${w}: ${weeks[w-1][0]}`;document.getElementById("weekGoal").textContent=weeks[w-1][1];let count=0;for(let d=start;d<=end;d++)count+=completed(d);let p=Math.round(count/((end-start+1)*3)*100);document.getElementById("weekProgress").style.width=Math.min(100,p)+"%";document.getElementById("weekProgressText").textContent=`${count} nhiệm vụ nhỏ đã hoàn thành · ${Math.min(100,p)}%`;document.getElementById("dayList").innerHTML=Array.from({length:end-start+1},(_,i)=>{let d=start+i;return `<div class="dayrow" onclick="selectDay(${d})"><div class="daynum">${d}</div><div class="grow"><strong>${task(d)}</strong><p>${completed(d)}/3 nhiệm vụ</p></div><span class="tag">${completed(d)===3?"HOÀN TẤT":"MỞ"}</span></div>`}).join("");selectDay(Math.min(Math.max(selected,start),end));}
+function selectDay(d){selected=d;let items=["Hoàn thành nhiệm vụ trọng tâm trong lộ trình","Vận động theo lịch và ghi lại kết quả","Thực hiện một hành động giao tiếp / phát triển bản thân"];let arr=state.done[d]||[];document.getElementById("selectedDayLabel").textContent=`Ngày ${d}`;document.getElementById("dayDetail").innerHTML=`<div class="eyebrow">${phase(d).toUpperCase()}</div><h3>Ngày ${d}: ${task(d)}</h3>${items.map((x,i)=>`<label class="check ${arr.includes(i)?"done":""}"><input type="checkbox" ${arr.includes(i)?"checked":""} onchange="toggleTask(${d},${i},this.checked)"><span>${x}</span></label>`).join("")}<p class="muted">Gợi ý: làm vừa sức, ưu tiên tính đều đặn. Nếu cơ thể mệt hoặc đau bất thường, hãy nghỉ và điều chỉnh.</p>`;}
+function toggleTask(d,i,v){let a=state.done[d]||[];state.done[d]=v?[...new Set([...a,i])]:a.filter(x=>x!==i);save();renderWeek();}
+function addRun(){let km=+document.getElementById("runKm").value||0,min=+document.getElementById("runMin").value||0;if(!min&&!km){alert("Nhập quãng đường hoặc thời gian trước khi lưu.");return}state.runs.unshift({date:document.getElementById("runDate").value,type:document.getElementById("runType").value,km,min,note:document.getElementById("runNote").value});document.getElementById("runKm").value="";document.getElementById("runMin").value="";document.getElementById("runNote").value="";save();}
+function renderRuns(){let km=state.runs.reduce((s,r)=>s+r.km,0),min=state.runs.reduce((s,r)=>s+r.min,0);document.getElementById("totalKm").textContent=km.toFixed(1)+" km";document.getElementById("totalMin").textContent=min+" phút";document.getElementById("runCount").textContent=state.runs.length+" buổi";document.getElementById("runList").innerHTML=state.runs.length?state.runs.map((r,i)=>`<div class="dayrow"><div class="grow"><strong>${r.type}</strong><p>${r.date} · ${r.km} km · ${r.min} phút ${r.note?"· "+r.note:""}</p></div><button class="secondary" onclick="deleteRun(${i})">Xóa</button></div>`).join(""):'<div class="empty">Chưa có buổi tập nào. Hãy ghi lại buổi đầu tiên.</div>'}
+function deleteRun(i){if(confirm("Xóa buổi tập này?")){state.runs.splice(i,1);save()}}
+const kpiDefs=[["Buổi chạy / đi bộ", "35–40 buổi",()=>state.runs.length],["Tổng quãng đường","Tích lũy theo thể lực",()=>state.runs.reduce((s,r)=>s+r.km,0).toFixed(1)+" km"],["Hành động giao tiếp","60 lần",()=>state.kpis.talks],["Video luyện nói","12 video",()=>state.kpis.videos],["Sách đã đọc","2 cuốn",()=>state.kpis.books],["Nói trước nhóm","4 lần",()=>state.kpis.publicSpeaking],["Kỹ năng chuyên môn","1 kỹ năng mới",()=>state.kpis.career],["Rà soát tài chính","3 lần",()=>state.kpis.finance]];
+function renderKpi(){let active=Object.keys(state.done).filter(k=>state.done[k]?.length).length,p=Math.round(active/90*100);document.getElementById("kpiPercent").textContent=p+"%";document.getElementById("kpiBar").style.width=p+"%";document.getElementById("kpiList").innerHTML=kpiDefs.map((k,i)=>`<div class="pillar"><div><strong>${k[0]}</strong><div class="muted">Mục tiêu: ${k[1]}</div></div><div style="text-align:right;color:var(--gold2);font-weight:800">${k[2]()}${i===0?"":""}</div></div>`).join("")+`<div class="row" style="margin-top:12px"><div><label>Hành động giao tiếp</label><input id="kTalks" type="number" min="0" value="${state.kpis.talks}"></div><div><label>Video luyện nói</label><input id="kVideos" type="number" min="0" value="${state.kpis.videos}"></div></div><div class="row"><div><label>Sách đã đọc</label><input id="kBooks" type="number" min="0" value="${state.kpis.books}"></div><div><label>Nói trước nhóm</label><input id="kSpeak" type="number" min="0" value="${state.kpis.publicSpeaking}"></div></div><div class="row"><div><label>Kỹ năng nghề mới (0/1)</label><input id="kCareer" type="number" min="0" value="${state.kpis.career}"></div><div><label>Lần rà soát tài chính</label><input id="kFinance" type="number" min="0" value="${state.kpis.finance}"></div></div><button style="width:100%;margin-top:10px" onclick="saveKpis()">Cập nhật KPI</button>`;let names=["Thể chất","Trí tuệ","Giao tiếp","Sự nghiệp & tài chính","Bản lĩnh & tình cảm"];document.getElementById("ratingList").innerHTML=names.map((n,i)=>`<div class="pillar"><label style="margin:0;flex:1;color:var(--text)">${n}</label><select id="rate${i}" style="width:90px"><option value="">Chưa chấm</option>${Array.from({length:10},(_,j)=>`<option value="${j+1}" ${state.ratings[i]===j+1?"selected":""}>${j+1}/10</option>`).join("")}</select></div>`).join("");}
+function saveKpis(){state.kpis={talks:+kTalks.value||0,videos:+kVideos.value||0,books:+kBooks.value||0,publicSpeaking:+kSpeak.value||0,career:+kCareer.value||0,finance:+kFinance.value||0};save();alert("Đã cập nhật KPI.");}
+function saveRatings(){for(let i=0;i<5;i++){let v=document.getElementById("rate"+i).value;if(v)state.ratings[i]=+v;}save();alert("Đã lưu đánh giá 5 lĩnh vực.");}
+function drawChart(){let c=document.getElementById("chart"),ctx=c.getContext("2d");ctx.clearRect(0,0,c.width,c.height);ctx.strokeStyle="#393a3b";ctx.fillStyle="#aaa";ctx.font="13px sans-serif";for(let j=0;j<=4;j++){let y=220-j*48;ctx.beginPath();ctx.moveTo(35,y);ctx.lineTo(620,y);ctx.stroke();ctx.fillText(String(j*17),5,y+4)}for(let w=0;w<13;w++){let n=0;for(let d=weekStarts[w];d<=Math.min(90,weekStarts[w]+6);d++)n+=completed(d);let x=48+w*44,h=n/70*190;ctx.fillStyle="#d6ad4f";ctx.fillRect(x,220-h,24,h);ctx.fillStyle="#aaa";ctx.fillText(String(w+1),x+7,242)}}
+function saveJournal(){let date=journalDate.value;if(!date){alert("Chọn ngày.");return}state.journals[date]={good:journalGood.value,improve:journalImprove.value,brave:journalBrave.value,thanks:journalThanks.value,mood:+journalMood.value||7};save();alert("Đã lưu nhật ký.");}
+function renderJournals(){let keys=Object.keys(state.journals).sort().reverse();journalCount.textContent=keys.length+" mục";journalList.innerHTML=keys.length?keys.map(k=>{let j=state.journals[k];return `<div style="padding:12px 0;border-bottom:1px solid var(--line)"><div class="row"><strong>${k}</strong><span class="tag">Tinh thần ${j.mood}/10</span><button class="secondary" onclick="editJournal('${k}')">Mở</button></div><p class="muted">${(j.good||"Chưa ghi").slice(0,120)}</p></div>`}).join(""):'<div class="empty">Nhật ký của bạn sẽ xuất hiện tại đây.</div>'}
+function editJournal(k){let j=state.journals[k];journalDate.value=k;journalGood.value=j.good;journalImprove.value=j.improve;journalBrave.value=j.brave;journalThanks.value=j.thanks;journalMood.value=j.mood;go("journal")}
+function exportData(){let blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="better-me-90-backup.json";a.click();URL.revokeObjectURL(a.href)}
+function importData(input){let f=input.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{state={...defaultState,...JSON.parse(r.result)};save();alert("Đã khôi phục dữ liệu.")}catch(e){alert("File sao lưu không hợp lệ.")}};r.readAsText(f)}
+function addSettings(){let card=document.createElement("div");card.className="card";card.style.marginTop="14px";card.innerHTML=`<div class="sectionhead"><h3>Dữ liệu & sao lưu</h3></div><p class="muted">Dữ liệu lưu trong bộ nhớ trình duyệt trên iPhone. Hãy xuất bản sao lưu định kỳ.</p><div class="row"><button onclick="exportData()">Xuất dữ liệu</button><label class="btn secondary" style="text-align:center;margin:0">Nhập dữ liệu<input type="file" accept="application/json" style="display:none" onchange="importData(this)"></label></div><button class="ghost" style="width:100%;margin-top:10px" onclick="if(confirm('Xóa toàn bộ dữ liệu trên thiết bị? Hãy xuất sao lưu trước.')){localStorage.removeItem('betterMe90');location.reload()}">Xóa toàn bộ dữ liệu</button>`;document.querySelector("main").appendChild(card)}
+function initExtra(){addSettings()}
+init();initExtra();
+</script>
+</body></html>
